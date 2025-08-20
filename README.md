@@ -4,7 +4,7 @@ Set up a basic monitoring dashboard using Netdata.
 ### Steps I followed
 - Created an ubuntu ec2 instance in aws.
 - Installed Netdata agent in that instance using kickstart.sh file.
-- If you want to install in the same way use the following doc.
+- If you want to install in the same way use the following doc.<br>
   https://learn.netdata.cloud/docs/netdata-agent/installation/linux/#run-the-one-line-install-command
 - After, installed netdata allowed 19999 port in security group of the instance to see the netdata agent console.
 - Next, tried to see the console using public_ip_of_server:19999. It took me to the netdata agent console. Initially it asks to signin I chose the skip and use the dashboard anonymously option.
@@ -68,3 +68,13 @@ Set up a basic monitoring dashboard using Netdata.
 - Furthermore, tested the alarm using stress command. And I got alert mail successfully.
 
 ![loading...](images/notification.png)
+
+- Initially, to clean up the system and remove the netdata agent I used --uninstall parameter in wget kickstart.sh command.
+- But it won't completely remove the netdata. So, I searched in online I got a script from the netdata community.
+- So, I uploaded the script here. The site link https://community.netdata.cloud/t/uninstalling-netdata-and-all-traces-ubuntu-server/3653
+- And to create alarm in the server I used following video and document.<br>
+https://www.youtube.com/watch?v=aWYj9VT8I5A<br>
+https://learn.netdata.cloud/docs/alerts-&-notifications/alert-configuration-reference
+
+### Project Description URL
+https://roadmap.sh/projects/simple-monitoring-dashboard
